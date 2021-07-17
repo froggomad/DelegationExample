@@ -9,13 +9,23 @@ import UIKit
 
 class PickingView: UIView {
     
-    private lazy var contentStack: UIStackView = .contentStack(views: [titleLabel, instructionLabel])
+    weak var dataSource: UITableViewDataSource?
+    
+    private lazy var contentStack: UIStackView = .contentStack(views: [titleLabel, instructionLabel, tableView])
     
     private lazy var titleLabel: UILabel = .makeFactoryLabel(using: .headline, with: "Pick Items")
     
     private lazy var instructionLabel: UILabel = .makeFactoryLabel(using: .subheadline, with: "Tap done when you're finished.")
     
-    init() {
+    private lazy var tableView: UITableView = {
+        let tv = UITableView()
+        tv.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tv.dataSource = dataSource
+        return tv
+    }()
+    
+    init(dataSource: UITableViewDataSource) {
+        self.dataSource = dataSource
         super.init(frame: .zero)
         setupViews()
     }
@@ -34,8 +44,8 @@ class PickingView: UIView {
         NSLayoutConstraint.activate([
             contentStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
             contentStack.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            contentStack.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            contentStack.centerXAnchor.constraint(equalTo: centerXAnchor)
+            contentStack.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            contentStack.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20)
         ])
     }
 }

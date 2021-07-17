@@ -9,7 +9,7 @@ import UIKit
 
 class PickingViewController: UIViewController {
     
-    private lazy var pickingView: PickingView = PickingView()
+    private lazy var pickingView: PickingView = PickingView(dataSource: self)
     
     override func viewDidLoad() {
         let action = UIAction(handler: { [unowned self] _ in
@@ -27,4 +27,18 @@ class PickingViewController: UIViewController {
     @objc func done() {
         navigationController?.popViewController(animated: true)
     }
+}
+
+extension PickingViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        cell.textLabel?.text = "Test"
+        return cell
+    }
+    
 }

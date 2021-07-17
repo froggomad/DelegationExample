@@ -9,7 +9,7 @@ import UIKit
 
 class PackingViewController: UIViewController {
 
-    private var contentView: PackingView = PackingView(presentPickingTarget: self, presentPickingSelector: #selector(loadPickingViewController))
+    private lazy var contentView: PackingView = PackingView(presentPickingTarget: self, presentPickingSelector: #selector(loadPickingViewController))
     
     override func viewDidLoad() {
         super.viewDidLoad()

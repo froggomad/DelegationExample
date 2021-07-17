@@ -9,12 +9,7 @@ import UIKit
 
 class PickingViewController: UIViewController {
     
-    private lazy var pickingView: PickingView = PickingView()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-    }
+    private lazy var pickingView: PickingView = PickingView()    
     
     override func loadView() {
         super.loadView()

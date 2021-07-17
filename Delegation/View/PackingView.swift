@@ -9,8 +9,8 @@ import UIKit
 
 class PackingView: UIView {
     
-    var presentPickingTarget: Any
-    var presentPickingSelector: Selector
+    private var presentPickingTarget: Any
+    private var presentPickingSelector: Selector
     
     private lazy var contentStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [titleLabel, instructionLabel, button])

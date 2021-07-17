@@ -10,6 +10,7 @@ import UIKit
 class PickingView: UIView {
     
     weak var dataSource: UITableViewDataSource?
+    weak var tableViewDelegate: UITableViewDelegate?
     
     private lazy var contentStack: UIStackView = .contentStack(views: [titleLabel, instructionLabel, tableView])
     
@@ -20,12 +21,12 @@ class PickingView: UIView {
     private lazy var tableView: UITableView = {
         let tv = UITableView()
         tv.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tv.delegate = self
+        tv.delegate = tableViewDelegate
         tv.dataSource = dataSource
         return tv
     }()
     
-    init(dataSource: UITableViewDataSource) {
+    init(dataSource: UITableViewDataSource?, tableViewDelegate: UITableViewDelegate?) {
         self.dataSource = dataSource
         super.init(frame: .zero)
         setupViews()
@@ -48,11 +49,5 @@ class PickingView: UIView {
             contentStack.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
             contentStack.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20)
         ])
-    }
-}
-
-extension PickingView: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("tapped \(SuitCaseItem.items[indexPath.item].title)")
     }
 }

@@ -9,7 +9,7 @@ import UIKit
 
 class PickingViewController: UIViewController {
     
-    private lazy var pickingView: PickingView = PickingView(dataSource: self)
+    private lazy var pickingView: PickingView = PickingView(dataSource: self, tableViewDelegate: self)
     
     override func viewDidLoad() {
         let action = UIAction(handler: { [unowned self] _ in
@@ -41,4 +41,10 @@ extension PickingViewController: UITableViewDataSource {
         return cell
     }
     
+}
+
+extension PickingViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("tapped \(SuitCaseItem.items[indexPath.item].title)")
+    }    
 }

@@ -32,12 +32,12 @@ class PickingViewController: UIViewController {
 extension PickingViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        SuitCaseItem.items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-        cell.textLabel?.text = "Test"
+        cell.textLabel?.text = SuitCaseItem.items[indexPath.row].title
         return cell
     }
     

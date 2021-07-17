@@ -53,6 +53,6 @@ class PickingView: UIView {
 
 extension PickingView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        print("tapped \(SuitCaseItem.items[indexPath.item].title)")
     }
 }

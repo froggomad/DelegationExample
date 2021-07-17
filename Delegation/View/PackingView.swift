@@ -14,21 +14,9 @@ class PackingView: UIView {
     
     private lazy var contentStack: UIStackView = .contentStack(views: [titleLabel, instructionLabel, button])
     
-    private lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 1
-        label.font = .preferredFont(forTextStyle: .headline)
-        label.text = "Let's Pack!"
-        return label
-    }()
+    private lazy var titleLabel: UILabel = .makeFactoryLabel(using: .headline, with: "Let's Pack!")
     
-    private lazy var instructionLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.text = "Remember, pack only what you need, no need to bring the entire house..."
-        label.font = .preferredFont(forTextStyle: .subheadline)
-        return label
-    }()
+    private lazy var instructionLabel: UILabel = .makeFactoryLabel(using: .subheadline, with: "Remember, pack only what you need, no need to bring the entire house...")
     
     private lazy var button: UIButton = {
         let button = UIButton(type: .system)

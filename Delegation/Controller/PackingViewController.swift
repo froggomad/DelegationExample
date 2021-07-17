@@ -26,6 +26,14 @@ class PackingViewController: UIViewController {
     
     @objc private func loadPickingViewController() {
         let vc = PickingViewController()
-        present(vc, animated: true)
+        showDetailViewController(vc, sender: nil)
+    }
+    
+    override func showDetailViewController(_ vc: UIViewController, sender: Any?) {        
+        if let navC = navigationController {
+            navC.pushViewController(vc, animated: true)
+        } else {
+            present(vc, animated: true)
+        }
     }
 }

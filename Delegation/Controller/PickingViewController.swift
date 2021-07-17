@@ -9,7 +9,7 @@ import UIKit
 
 class PickingViewController: UIViewController {
     
-    private lazy var pickingView: PickingView = PickingView()    
+    private lazy var pickingView: PickingView = PickingView()
     
     override func loadView() {
         super.loadView()

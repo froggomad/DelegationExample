@@ -9,6 +9,9 @@ import UIKit
 
 class PackingView: UIView {
     
+    var presentPickingTarget: Any
+    var presentPickingSelector: Selector
+    
     private lazy var contentStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [titleLabel, instructionLabel, button])
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -35,16 +38,21 @@ class PackingView: UIView {
     
     private lazy var button: UIButton = {
         let button = UIButton(type: .system)
-        button.layer.borderColor = UIColor.systemBlue.cgColor
-        button.layer.borderWidth = 1        
         button.layer.cornerRadius = 10
         button.frame.size.height = 44
+        
+        button.layer.borderColor = UIColor.systemBlue.cgColor
+        button.layer.borderWidth = 1
         button.setTitle("Start Packing!", for: .normal)
+        button.addTarget(presentPickingTarget, action: presentPickingSelector, for: .touchUpInside)
+        
         return button
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(presentPickingTarget: Any, presentPickingSelector: Selector) {
+        self.presentPickingTarget = presentPickingTarget
+        self.presentPickingSelector = presentPickingSelector
+        super.init(frame: .zero)
         setupViews()
     }
     

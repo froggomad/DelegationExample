@@ -28,6 +28,7 @@ class PickingView: UIView {
     
     init(dataSource: UITableViewDataSource?, tableViewDelegate: UITableViewDelegate?) {
         self.dataSource = dataSource
+        self.tableViewDelegate = tableViewDelegate
         super.init(frame: .zero)
         setupViews()
     }

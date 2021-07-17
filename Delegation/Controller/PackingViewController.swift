@@ -29,11 +29,11 @@ class PackingViewController: UIViewController {
         showDetailViewController(vc, sender: nil)
     }
     
-    override func showDetailViewController(_ vc: UIViewController, sender: Any?) {        
-        if let navC = navigationController {
-            navC.pushViewController(vc, animated: true)
-        } else {
-            present(vc, animated: true)
-        }
+    // This decouples presentation logic and leaves it up to the implementor
+    // using this method is an example of decoupling, but in our contrived example,
+    // isn't really decoupling anything since we're doing the presentation locally
+    // this is especially useful in frameworks and other decoupled modules
+    override func showDetailViewController(_ vc: UIViewController, sender: Any?) {
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

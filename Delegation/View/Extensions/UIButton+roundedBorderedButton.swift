@@ -16,9 +16,11 @@ extension UIButton {
         button.layer.borderColor = color.cgColor
         button.layer.borderWidth = borderWidth
         button.setTitle(text, for: .normal)
+        
         guard let target = target,
               let selector = selector
         else { return button }
+        
         button.addTarget(target, action: selector, for: .touchUpInside)
         
         return button

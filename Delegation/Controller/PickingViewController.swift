@@ -9,6 +9,8 @@ import UIKit
 
 class PickingViewController: UIViewController {
     
+    var selectedItems: [Int: SuitCaseItem] = [:]
+    
     private lazy var pickingView: PickingView = PickingView(dataSource: self, tableViewDelegate: self)
     
     override func viewDidLoad() {
@@ -45,6 +47,15 @@ extension PickingViewController: UITableViewDataSource {
 
 extension PickingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("tapped \(SuitCaseItem.items[indexPath.item].title)")
-    }    
+        
+        if let item = selectedItems[indexPath.row] { // remove existing item
+            selectedItems.removeValue(forKey: indexPath.row)
+            print("removed \(item.title)")
+        } else { // add new item
+            let item = SuitCaseItem.items[indexPath.row]
+            selectedItems[indexPath.row] = item
+            print("added \(item.title)")
+        }
+        
+    }
 }

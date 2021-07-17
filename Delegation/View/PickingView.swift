@@ -14,7 +14,7 @@ class PickingView: UIView {
     
     private lazy var contentStack: UIStackView = .contentStack(views: [titleLabel, instructionLabel, tableView])
     
-    private lazy var titleLabel: UILabel = .makeFactoryLabel(using: .headline, with: "Pick Items")
+    private lazy var titleLabel: UILabel = .makeFactoryLabel(using: .headline, with: "Pick Items to Pack")
     
     private lazy var instructionLabel: UILabel = .makeFactoryLabel(using: .subheadline, with: "Tap done when you're finished.")
     

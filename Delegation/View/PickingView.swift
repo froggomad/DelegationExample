@@ -20,6 +20,7 @@ class PickingView: UIView {
     private lazy var tableView: UITableView = {
         let tv = UITableView()
         tv.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tv.delegate = self
         tv.dataSource = dataSource
         return tv
     }()
@@ -47,5 +48,11 @@ class PickingView: UIView {
             contentStack.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
             contentStack.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20)
         ])
+    }
+}
+
+extension PickingView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
 }

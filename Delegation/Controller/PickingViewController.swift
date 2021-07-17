@@ -9,7 +9,7 @@ import UIKit
 
 class PickingViewController: UIViewController {
     
-    var selectedItems: [Int: SuitCaseItem] = [:]
+    var selectedItems: [Int: SuitcaseItem] = [:]
     
     private lazy var pickingView: PickingView = PickingView(dataSource: self, tableViewDelegate: self)
     
@@ -34,12 +34,12 @@ class PickingViewController: UIViewController {
 extension PickingViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        SuitCaseItem.items.count
+        SuitcaseItem.items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-        cell.textLabel?.text = SuitCaseItem.items[indexPath.row].title
+        cell.textLabel?.text = SuitcaseItem.items[indexPath.row].title
         return cell
     }
     
@@ -52,7 +52,7 @@ extension PickingViewController: UITableViewDelegate {
             selectedItems.removeValue(forKey: indexPath.row)
             print("removed \(item.title)")
         } else { // add new item
-            let item = SuitCaseItem.items[indexPath.row]
+            let item = SuitcaseItem.items[indexPath.row]
             selectedItems[indexPath.row] = item
             print("added \(item.title)")
         }

@@ -18,7 +18,7 @@
 		AAF7560E26A36D6A0021B39B /* UIStackView+contentStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF7560D26A36D6A0021B39B /* UIStackView+contentStack.swift */; };
 		AAF7561026A36F760021B39B /* UILabel+FactoryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF7560F26A36F760021B39B /* UILabel+FactoryLabel.swift */; };
 		AAF7561326A371DC0021B39B /* UIButton+roundedBorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF7561226A371DC0021B39B /* UIButton+roundedBorderedButton.swift */; };
-		AAF7561726A37F460021B39B /* SuitecaseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF7561626A37F460021B39B /* SuitecaseItem.swift */; };
+		AAF7561726A37F460021B39B /* SuitcaseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF7561626A37F460021B39B /* SuitcaseItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +35,7 @@
 		AAF7560D26A36D6A0021B39B /* UIStackView+contentStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+contentStack.swift"; sourceTree = "<group>"; };
 		AAF7560F26A36F760021B39B /* UILabel+FactoryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+FactoryLabel.swift"; sourceTree = "<group>"; };
 		AAF7561226A371DC0021B39B /* UIButton+roundedBorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+roundedBorderedButton.swift"; sourceTree = "<group>"; };
-		AAF7561626A37F460021B39B /* SuitecaseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuitecaseItem.swift; sourceTree = "<group>"; };
+		AAF7561626A37F460021B39B /* SuitcaseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuitcaseItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +120,7 @@
 		AAF7561526A37F310021B39B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AAF7561626A37F460021B39B /* SuitecaseItem.swift */,
+				AAF7561626A37F460021B39B /* SuitcaseItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -203,7 +203,7 @@
 				AAF755F126A35A770021B39B /* AppDelegate.swift in Sources */,
 				AAF7561026A36F760021B39B /* UILabel+FactoryLabel.swift in Sources */,
 				AAF755F326A35A770021B39B /* SceneDelegate.swift in Sources */,
-				AAF7561726A37F460021B39B /* SuitecaseItem.swift in Sources */,
+				AAF7561726A37F460021B39B /* SuitcaseItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

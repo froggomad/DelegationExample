@@ -18,18 +18,7 @@ class PackingView: UIView {
     
     private lazy var instructionLabel: UILabel = .makeFactoryLabel(using: .subheadline, with: "Remember, pack only what you need, no need to bring the entire house...")
     
-    private lazy var button: UIButton = {
-        let button = UIButton(type: .system)
-        button.layer.cornerRadius = 10
-        button.frame.size.height = 44
-        
-        button.layer.borderColor = UIColor.systemBlue.cgColor
-        button.layer.borderWidth = 1
-        button.setTitle("Start Packing!", for: .normal)
-        button.addTarget(presentPickingTarget, action: presentPickingSelector, for: .touchUpInside)
-        
-        return button
-    }()
+    private lazy var button: UIButton = .roundedBordered(text: "Let's Pack!", with: presentPickingTarget, selector: presentPickingSelector)
     
     init(presentPickingTarget: Any, presentPickingSelector: Selector) {
         self.presentPickingTarget = presentPickingTarget

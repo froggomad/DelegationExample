@@ -12,13 +12,7 @@ class PackingView: UIView {
     private var presentPickingTarget: Any
     private var presentPickingSelector: Selector
     
-    private lazy var contentStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [titleLabel, instructionLabel, button])
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.axis = .vertical
-        stack.spacing = 12
-        return stack
-    }()
+    private lazy var contentStack: UIStackView = .contentStack(views: [titleLabel, instructionLabel, button])
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()

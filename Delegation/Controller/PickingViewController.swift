@@ -28,7 +28,7 @@ class PickingViewController: UIViewController {
     }
     
     override func loadView() {
-        super.loadView()
+        super.loadView()        
         view = pickingView
     }
     

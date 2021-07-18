@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol SuitcasePackable: AnyObject {
+    func packItems(_: [SuitcaseItem])
+}
+
 class PickingViewController: UIViewController {
     
-    var selectedItems: [Int: SuitcaseItem] = [:]
+    weak var packingDelegate: SuitcasePackable?
+    
+    private var selectedItems: [Int: SuitcaseItem] = [:]
     
     private lazy var pickingView: PickingView = PickingView(dataSource: self, tableViewDelegate: self)
     
@@ -27,6 +33,8 @@ class PickingViewController: UIViewController {
     }
     
     @objc func done() {
+        let packedItems = Array(selectedItems.values)
+        packingDelegate?.packItems(packedItems)
         navigationController?.popViewController(animated: true)
     }
 }

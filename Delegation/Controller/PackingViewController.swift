@@ -26,6 +26,7 @@ class PackingViewController: UIViewController {
     
     @objc private func loadPickingViewController() {
         let vc = PickingViewController()
+        vc.packingDelegate = self
         showDetailViewController(vc, sender: nil)
     }
     
@@ -35,5 +36,11 @@ class PackingViewController: UIViewController {
     // this is especially useful in frameworks and other decoupled modules
     override func showDetailViewController(_ vc: UIViewController, sender: Any?) {
         navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension PackingViewController: SuitcasePackable {
+    func packItems(_ items: [SuitcaseItem]) {
+        print("I'm packing \(items.count) items")
     }
 }
